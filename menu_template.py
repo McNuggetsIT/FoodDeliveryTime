@@ -26,6 +26,28 @@ def mostra_testo(titolo, testo):
 
     label = tk.Label(win, text=testo, wraplength=400, justify="left")
     label.pack(padx=20, pady=20)
+    
+def mostra_readme(titolo, percorso):
+    win = tk.Toplevel(root)
+    win.title(titolo)
+    win.geometry("500x500")
+
+    # Legge il file
+    with open(percorso, "r", encoding="utf-8") as f:
+        testo = f.read()
+
+    # Area di testo scrollabile
+    text_box = tk.Text(win, wrap="word")
+    text_box.pack(fill="both", expand=True, padx=10, pady=10)
+
+    # Scrollbar
+    scrollbar = tk.Scrollbar(win, command=text_box.yview)
+    scrollbar.pack(side="right", fill="y")
+    text_box.config(yscrollcommand=scrollbar.set)
+
+    # Inserisce il contenuto
+    text_box.insert("1.0", testo)
+    text_box.config(state="disabled")
 
 
 def main():
@@ -33,7 +55,7 @@ def main():
 
     root = tk.Tk()
     root.title("RISULTATI ANALISI")
-    root.geometry("300x300")
+    root.geometry("500x500")
 
     tk.Label(root, text="RISULTATI ANALISI", font=("Arial", 14, "bold")).pack(pady=10)
 
@@ -66,8 +88,15 @@ def main():
                   "in base al luogo."
               )
     ).pack(fill="x", padx=20, pady=5)
+    
+    tk.Button(root, text="6. Crediti",
+          command=lambda: mostra_testo(
+              "Crediti",
+              mostra_readme("Crediti", "README.md")
+          )
+    ).pack(fill="x", padx=20, pady=5)
 
-    tk.Button(root, text="6. Esci", command=root.quit).pack(fill="x", padx=20, pady=10)
+    tk.Button(root, text="7. Esci", command=root.quit).pack(fill="x", padx=20, pady=10)
 
     root.mainloop()
                 
