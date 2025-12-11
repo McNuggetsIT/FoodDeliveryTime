@@ -1,28 +1,57 @@
+import tkinter as tk
+from PIL import Image, ImageTk
 
 def main():
           
     while True:
         
         print("\n RISULTATI ANALISI")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-        print("5. ")
+        print("1. Grafico di correlazione")
+        print("2. Grafico di pairplot")
+        print("3. Grafico a barre distribuzioni")
+        print("4. Analisi dati conclusioni")
+        print("5. Analisi ml conclusioni")
         print("6. Esci")
         chooice = int(input("Scegli una opzione: "))
         
         match chooice:
             case 1:
-                pass
+                root = tk.Tk()
+                root.title("Correlazione")
+
+                img = Image.open("corr.png")
+                img_tk = ImageTk.PhotoImage(img)
+
+                label = tk.Label(root, image=img_tk)
+                label.pack()
+
+                root.mainloop()
             case 2:
-                pass
+                root = tk.Tk()
+                root.title("Distanza tipo ordine")
+
+                img = Image.open("dist_ord.png")
+                img_tk = ImageTk.PhotoImage(img)
+
+                label = tk.Label(root, image=img_tk)
+                label.pack()
+
+                root.mainloop()
             case 3:
-                pass
+                root = tk.Tk()
+                root.title("Distribuzioni")
+
+                img = Image.open("dist.png")
+                img_tk = ImageTk.PhotoImage(img)
+
+                label = tk.Label(root, image=img_tk)
+                label.pack()
+
+                root.mainloop()
             case 4:
-                pass
+                print("Droppati tutti i valori nulli e le colonne ininfluenti per l'analisi del machine learning come: ID, precipitation. Trasformato successivamente le colonne di tipo object in valori numerici.")
             case 5:
-                pass
+                print("Con il machine learning utilizzando un algoritmo di regresssione abbiamo cercato di predirre il tempo di consegna futuro dei vari corrieri in base al luogo.")
             case 6:
                 break
             case _:
