@@ -12,11 +12,6 @@ Correlazioni
 
 
 
-
-
-
-
-
 Obbiettivi machine leargning
 
 Previsione delle tempistiche di consegna,
