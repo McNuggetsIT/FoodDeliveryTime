@@ -49,9 +49,28 @@ def main():
 
                 root.mainloop()
             case 4:
-                print("Droppati tutti i valori nulli e le colonne ininfluenti per l'analisi del machine learning come: ID, precipitation. Trasformato successivamente le colonne di tipo object in valori numerici.")
+                
+                root = tk.Tk()
+                root.title("Analisi dati conclusioni")
+
+                testo = ("Droppati tutti i valori nulli e le colonne ininfluenti per l'analisi del machine learning come: ID, precipitation. Trasformato successivamente le colonne di tipo object in valori numerici.")
+
+                label = tk.Label(root, text=testo, wraplength=400, justify="left")
+                label.pack(padx=20, pady=20)
+
+                root.mainloop()
             case 5:
-                print("Con il machine learning utilizzando un algoritmo di regresssione abbiamo cercato di predirre il tempo di consegna futuro dei vari corrieri in base al luogo.")
+                root = tk.Tk()
+                root.title("Analisi ml conclusioni")
+
+                testo = ("Con il machine learning utilizzando un algoritmo di regresssione "
+                        "abbiamo cercato di predirre il tempo di consegna futuro dei vari "
+                        "corrieri in base al luogo.")
+
+                label = tk.Label(root, text=testo, wraplength=400, justify="left")
+                label.pack(padx=20, pady=20)
+
+                root.mainloop()
             case 6:
                 break
             case _:
