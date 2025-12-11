@@ -109,11 +109,15 @@ def main():
               )
     ).pack(fill="x", padx=20, pady=5)
     
-    tk.Button(root, text="6. Crediti",
+    tk.Button(root, text="6. Grafico outliers",
+              command=lambda: mostra_immagine("Grafico outliers", "outliers.png")
+    ).pack(fill="x", padx=20, pady=5)
+    
+    tk.Button(root, text="7. Crediti",
           command=lambda: mostra_readme("Crediti", "README.md")
     ).pack(fill="x", padx=20, pady=5)
 
-    tk.Button(root, text="7. Esci", command=root.quit).pack(fill="x", padx=20, pady=10)
+    tk.Button(root, text="8. Esci", command=root.quit).pack(fill="x", padx=20, pady=10)
 
     root.mainloop()
                 
