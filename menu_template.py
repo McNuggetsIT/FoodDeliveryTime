@@ -103,9 +103,12 @@ def main():
     tk.Button(root, text="5. Analisi ML conclusioni",
               command=lambda: mostra_testo(
                   "Analisi ML conclusioni",
-                  "Con il machine learning utilizzando un algoritmo di regressione "
+                  "Con il machine learning utilizzando un algoritmo di regressione tramite ensamble"
                   "abbiamo cercato di predire il tempo di consegna dei corrieri "
-                  "in base al luogo."
+                  "in base al luogo. "
+                  "Ottenendo i seguenti risultati finali:"
+                  " RMSE: 13.966082. "
+                  "R^2 : 0.69071. "
               )
     ).pack(fill="x", padx=20, pady=5)
     
